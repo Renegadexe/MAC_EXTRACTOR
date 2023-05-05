@@ -14,6 +14,7 @@ uploaded_file = st.file_uploader("Upload a text file", type="txt")
 
 if uploaded_file is not None:
     text = uploaded_file.read().decode("utf-8")
+    text = text.readline()
     mac_addresses = extract_mac_addresses(text)
 
     if len(mac_addresses) == 0:
